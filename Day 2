@@ -1,0 +1,111 @@
+Simple Programming of Java
+
+1. CLASS WELCOME
+{
+  public static void main (String agrs[])
+  {
+    System.out.println("Welcome to Java Programming");
+  }
+}
+
+2. CLASS SUM
+{
+  public static void main (String agrs[])
+  {
+    int a = 40, b = 30;
+    int c = a+b
+    System.out.println("Sum =" +c);
+  }
+}
+
+3. CLASS DATATYPES
+{
+  public static void main (String agrs[])
+  {
+    int a = 40;
+    float b = 25.55f;
+    char c = 'a';
+    double d = 40.7843;
+    long e = 283282;
+    byte f = 9;
+    boolean g = true;
+    System.out.println("the value =" +a);
+    System.out.println("the value =" +b);
+    System.out.println("the value =" +c);
+    System.out.println("the value =" +d);
+    System.out.println("the value =" +e);
+    System.out.println("the value =" +f);
+    System.out.println("the value =" +g);
+  }
+}
+
+4. CLASS CIRCLE
+{
+  public static void main (String agrs[])
+  {
+    double r = 35.55, pi = 3.14;
+    double c = 2*pi*r;
+    double a = pi*r*r;
+    System.out.println("The Circumference of Circle =" +c);
+    system.out.ptintln("The Area of Circle =" +a);
+  }
+}
+
+5. CLASS INTEREST
+{
+  public static void main (String agrs[])
+  {
+    float p = 5000.55f, n = 3.0f, r = 8.0f, i;
+    i = p*n*r/100;
+    System.out.println("The Simple Interest =" +i);
+  }
+}
+
+6. CLASS ODDEVEN
+{
+  public static void main (String agrs[])
+  {
+    int n = 45;
+    if (n%2 == 0)
+    System.out.println(n+ " is an even number");
+    else
+    system.out.ptintln(n+ " is an odd number");
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
