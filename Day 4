@@ -1,0 +1,73 @@
+1. class employee
+{
+  int empno;
+  String name;
+  double salary;
+  public static void main(String args[])
+  {
+    employee e = new employee();
+    e.empno = 32111;
+    e.name = "Joe"
+    e.salary = 50000.87;
+    System.out.println("The employee number = " +e.empno);
+    System.out.println("The employee name = " +e.name);
+    System.out.println("The employee salary = " +e.salary);
+  }
+}
+
+2. class box
+{
+  int length, breadth, height;
+  void volume()
+  {
+    System.out.println("The volume of box = " +(length*breadth*height));
+  }
+  public static void main (String args[])
+  {
+    box b = new box();
+    b.length = 50;
+    b.breadth = 90;
+    b.height = 30;
+    b.volume();
+  }
+}
+
+3. class boxdemo
+{
+  int length, breadth, height;
+  int volume()
+  {
+    return (length*breadth*height);
+  }
+  public static void main(String args[])
+  {
+    boxdemo bd = new boxdemo();
+    bd.length = 44;
+    bd.breadth = 87;
+    bd.height = 55;
+    int vol = bd.volume();
+    System.out.println("The volume of box = " +vol);
+
+  }
+}
+
+4. class boxvalue
+{
+  int length, breadth, height;
+  void volume()
+  {
+    System.out.println("The volume of box = " +(length*breadth*height));
+  }
+}
+
+class boxes
+{
+  public static void main(String args[])
+  {
+    boxdvalue bv = new boxvalue();
+    bv.length = 40;
+    bv.breadth = 80;
+    bvheight = 50;
+    bv.volume();
+  }
+}
