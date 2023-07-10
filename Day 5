@@ -1,0 +1,112 @@
+CONSTRUCTOR
+- A constructor is a special member function that is used to initialize class members.
+- A constructor will have the same name as the class name.
+- A constructor can take arguments. It can be overloaded.
+- Garbage collection -> Threshold limit.
+Java does not have Deconstructor.
+
+1. class newdata
+{
+  int custid;
+  String name;
+  double amount;
+  newdata();
+  {
+    custid = 24006;
+    name = "Joe';
+    amount = 54000.87;
+  }
+  void display(0
+  {
+    System.out.println("The customer id = " +custid);
+    System.out.println("The customer name = " +name);
+    System.out.println("The amount to be paid = " +amount);
+  }
+}
+
+class customer
+{
+  public static void main(String args[])
+  {
+    newdata n = new newdata();
+    n.display();
+  }
+}
+
+CONSTRUCTOR WITH ARGUMENTS
+2. class studentinfo
+{
+  int rollno;
+  String student_name;
+  double fees;
+  studentinfo(int r, String s, double f)
+  {
+    rollno = r;
+    student_name = s;
+    fees = f;
+  }
+  void display()
+  {
+    System.out.println("The student rollno = " +rollno)
+    System.out.println("The student name = " +student_name)
+    System.out.println("The student fees = " +fees);
+  }
+}
+
+class student
+{
+  public static void main(String args[])
+  {
+    studentinfo s = new studentinfo (12453, "Joe", 56000.98);
+    s.display();
+  }
+}
+
+INHERITANCE WITH OVERLOADING
+3. class employee data
+{
+  int empno;
+  String name;
+  double salary;
+  employeedata();
+  {
+    empno = 5678;
+    name = "Joe";
+    salary = 450000.07;
+  }
+  employeedata(int e, String n, double s)
+  {
+    empno = e;
+    name = n;
+    salary = s;
+  }
+  employeedata(int emp, double sal)
+  {
+    empno = emp;
+    salary = sal;
+  }
+  void display()
+  {
+    System.out.println("The employee number = " +empno);
+    System.out.println("The employee name = " +name);
+    System.out.println("The employee salary = " +salary);
+  }
+  void show()
+  {
+    System.out.println("The employee number = " +empno);
+    System.out.println("The employee salary = " +salary);
+  }
+}
+
+class employee1
+{
+  public static void main(String args[])
+  {
+    employeedata e = new employee();
+    e.display();
+    employee data e1 = new employeedata (12345, "Joe", 86000.54);
+    e1.display();
+    employeedata e2 = new employeedata (45321, 65000.32);
+    e2.show();
+  }
+}
