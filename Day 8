@@ -1,0 +1,105 @@
+EXCEPTION HANDLING
+An Exception is an error that happens during run time.
+Java Exception handling is managed by five keywords namely,
+-	try
+-	catch
+-	throws
+-	throw
+-	finally
+
+Exception 
+-	Runtime Exception
+-	Errors
+
+try
+{
+block of code to monitor for error;
+}
+catch(ExceptionType ExceptionObject)
+{
+	exception handler for exceptiontype;
+}
+finally(optional)
+{
+	block of code to execute after error;
+}
+
+1.	class errordata
+{
+	public static void main(String args[])
+	{
+		int x = 10;
+		int y = 0;
+		int z = x/y;
+		System.out.println(“The value of z = ”+z);
+	}
+}
+
+2.	class except1
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			int x = 10;
+			int y = 0;
+			int z = x/y;
+			System.out.println(“This will not be printed”);
+		}
+		catch(ArithmeticException ae)
+		{
+			System.out.println(“Overridden error handled” +ae)
+	}
+}
+
+3.	class multiexception
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			int a = args.length;
+      System.out.println("a = "+a);
+      int b = 30/a;
+      int c[] = {20};
+      c[50] = 121;
+    }
+    catch(ArithmeticException ae)
+    {
+      System.out.println("Divide by 0 error" +ae);
+    }
+    catch(ArrayIndexOutOfBoundsException ai)
+    {
+      System.out.println("Array index object" +ai);
+    }
+  }
+}
+
+THROW
+A throw is a keyword used to raise an error.
+
+4. class throwdemo
+{
+  static void display()
+  {
+    try
+    {
+      throw new NullPointer Exception("Exceptiom");
+    }
+    catch(NullPointerException ne);
+    {
+      System.out.println("Caught inside display method");
+      throw ne;
+    }
+    public static void main(String args[])
+  {
+    try
+    {
+      display();
+    }
+    catch(NullPointerException ne)
+    {
+      System.out.println("Recaught" +ne);
+    }
+  }
+}
