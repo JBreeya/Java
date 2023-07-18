@@ -1,0 +1,88 @@
+ABSTRACT CLASS
+Abstract classes are from instances that cannot be created super class has to be overridden by the sub-class.
+Abstract classes are generally higher and act as super classes.
+A keyword abstract used to describe the abstract class
+
+1.	Abstract class vehicle
+{
+	abstract void display();
+	void show()
+	{
+		System.out.println(“Bus”);
+	}
+}
+class vehicledemo extends vehicle
+{
+	void display()
+	{
+		System.out.println(“Overridden method display”);
+	}
+	public statis void main(String args[])
+	{
+		vehicledemo v = new vehicledemo();
+		v.show();
+		v.display();
+	}
+}
+
+INTERFACE
+An interface is a collection of abstracts in which individual classes can be important. 
+It is defined similarly to class
+
+2.	interface inter
+{
+	void display();
+	void show();
+}
+class newinfo implements inter
+{
+	public void display()
+	{
+		System.out.println(“Abstract method display overridden”);
+	}
+	public void show()
+	{
+		System.oy.println(“Abstract method show overridden”);
+	}
+}
+class interfacedemo
+{
+	public static void main(String args[])
+	{
+		newinfo n = new newinfo();
+		n.show();
+		n.display();
+	}
+}
+
+PACKAGES
+Packages contain a set of classes in order to ensure that class names of unique.
+Packages are containers of classes that are used to separate with class name place.
+Packages are stored in a higher article manner and are explicitly imported into new class definitions.
+
+3.	package pack;
+public class class1
+{
+	public static void greetings()
+	{
+		System.out.println(“Welcome”);
+	}
+}
+package pack.subpack;
+public class class2
+{
+	public static void farewell()
+	{
+		System.out.println(“Good bye”);
+	}
+}
+import pack.*;
+import pack.subpack.*;
+class importdata
+{
+	public static void main(String args[])
+	{
+		class1.greetings();
+		class2.farewell();
+	}
+}
