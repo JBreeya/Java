@@ -1,0 +1,76 @@
+THROWS
+1.	class throwsdemo
+{
+	Static void throwdata() throws IllegalAccessException
+	{
+		System.out.println(“Inside throwdata”);
+		throw new IllegalAccessEsception(“Exception Stop Access”);
+	}
+	public static void main(String args[])
+	{
+		try
+		{
+			throwdata();
+		}
+		catch(IllegalAccessException ie)
+		{
+			System.out.println(“Exception Caught” +ie);
+		}
+	}
+}
+
+FINALLY
+Finally creates a block of code that will be executed after a try-catch block has been completed before the code following the try-catch block.
+The Finally block can be executed irrespective of whether an exception is thrown or not.
+
+2. class finallydemo
+{
+  static void func1
+  {
+    try
+    {
+      System.out.println("Inside func1");
+      throw new RuntimeException("Demo");
+    }
+    finally
+    {
+      System.out.println("finally for func1");
+    }
+  }
+  static void func2()
+  {
+    try
+    {
+      System.out.println("Inside func2");
+      return;
+    }
+    finally
+    {
+      System.out.println("finally for func2");
+    }
+  }
+  static void func3()
+  {
+    try
+    {
+      System.out.println("Inside func3");
+    }
+    finally
+    {
+      System.out.println("finally for func3");
+    }
+  }
+  public static void func(String args[])
+  {
+    try
+    {
+      func1();
+    }
+    catch(Exception e)
+    {
+      System.out.println("Exception caught");
+    }
+      func2();
+      func3();
+  }
+}
