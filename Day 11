@@ -1,0 +1,102 @@
+CREATING MULTIPLETHREADS
+1. class newthread implements Runnable
+{
+  String name;
+  Thread t;
+  new thread(String threadname);
+  {
+    name = threadname;
+    t = new Thread(this, name);
+    System.out.println("new thread" +t);
+    t.start();
+  }
+  public void run()
+  {
+    try
+    {
+      for(int i = 5; i>0; i--)
+      {
+        System.out.println(name+ ":" +i);
+        Thread.sleep(1000);
+      }
+    }
+    catch(InterruptedException e)
+    {
+      System.out.pritnln(name+ "interrupted");
+    }
+    System.out.pritnln(name+ "exiting");
+  }
+}
+class multiplethreaddemo
+{
+  public static void main(String args[])
+  {
+    new newthread ("one");
+    new newthread ("two");
+    new newthread ("three");
+    try
+    {
+      Thread.sleep(1000);
+    }
+    catch(InterruptedException e)
+    {
+      System.out.println("Main Thread Interruption");
+    }
+    System.out.println("Main Thread Exiting");
+  }
+}
+
+2. class mythread implement Runnable
+{
+  String name;
+  Thread t;
+  my thread(String threadname)
+  {
+    name = threadname;
+    t = new Thread(this, name);
+    System.out.println("new thread" +t);
+    t.start();
+  }
+  public void run()
+  {
+    try
+    {
+      for(int i = 5; i>0; i--)
+      {
+        System.out.println(name+ ":" +i);
+        Thread.sleep(1000);
+      }
+    }
+    catch(InterruptedException e)
+    {
+      System.out.pritnln(name+ "interrupted");
+    }
+    System.out.pritnln(name+ "exiting");
+  }
+}
+class isalivejoindemo
+{
+  public static void main(String args[])
+  {
+    mythread obj1 = new mythread ("one");
+    mythread obj2 = new mythread ("two");
+    mythread obj3 = new mythread ("three");
+    System.out.println("Thread one is alive:" +obj1.t.isAlive());
+    System.out.println("Thread two is alive:" +obj2.t.isAlive());
+    System.out.println("Thread two is alive:" +obj3.t.isAlive());
+    try
+    {
+      System.out.println("Waiting for threads to finish");
+      obj1.t.join();
+      obj2.t.join();
+      obj3.t.join();
+    }
+    catch(InterruptedException e)
+    {
+      System.out.println("Main Thread Interruption");
+    }
+    System.out.println("Thread one is alive:" +obj1.t.isAlive());
+    System.out.println("Thread two is alive:" +obj2.t.isAlive());
+    System.out.println("Thread two is alive:" +obj3.t.isAlive());
+  }
+}
