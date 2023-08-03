@@ -1,0 +1,73 @@
+SYNCHRONIZATION
+- It is the process of accessing a shared resource with the help of Java threads
+- After completing the Synchronization process, all the resources will be updated to the latest version.
+
+1. class callme
+{
+  void call(String msg)
+  {
+    System.out.println(msg);
+    try
+    {
+      Thread.sleep(1000);
+    }
+    catch(InterruptedException e)
+    {
+      System.out.println("Interrupted");
+    }
+  }
+}
+class caller implements Runnable
+{
+  String msg;
+  callme target;
+  Thread t;
+  public caller(callme trag, String s)
+  {
+    target = targ;
+    msg = s;
+    t = new Thread (this);
+    t.start();
+  }
+  public void run()
+  {
+    synchronized(target)
+    {
+      target.call(msg);
+    }
+  }
+}
+class synchdemo
+{
+  public static void main(String args[])
+  {
+    callme target = new callme();
+    caller obj1 = new caller(target, "Hello");
+    caller obj2 = new caller(target, "Synchronized");
+    caller obj3 = new caller(target, "World");
+  }
+}
+
+STREAM
+- A Stream is a path of communication between the source of information and the destination
+- There are three types of Streams
+    1. Input Stream
+    2. Output Stream
+    3. Readers/Writers
+- All the classes that are presented here are Abstract class. We will have to over-ride the Abstract class
+
+2. import java.io.*;
+class readdemo
+{
+  public static void main(String args[]) throws IOException
+  {
+    int i;
+    byte b[] = new byte [10]; //Wrapper class
+    System.out.println("Enter a String of 10 characters");
+    for(i=0; i<10; i++)
+    b[i] = (byte) System.in.read();
+    System.out.println("the String entered is");
+    for(i=0; i<10; i++)
+    System.out.println((char) b[i]);
+  }
+}
