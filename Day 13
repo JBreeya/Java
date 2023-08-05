@@ -1,0 +1,72 @@
+READING STRINGS
+1. import java.io.*;
+class buffread
+{
+  public static void main(String args[]) throws IOException
+  {
+    char c;
+    BufferedReader br = new BufferedReader(new InoutStreamReader(System.in));
+    System.out.println("enter characters..'q' to quit");
+    do
+    {
+      c = (char) br.read();
+      System.out.println(c);
+    }
+    while(c != 'q');
+  }
+}
+
+WRITING CONSOLE OUTPUT
+2. class writedemo
+{
+  public static void main(String args[])
+  {
+    int x;
+    x = 'C';
+    System.out.write(x); //System.out.println(x);
+    System.out.write('\n');
+  }
+}
+
+THE PRINTWRITER CLASS
+3. import java.io.*;
+class printwriterdemo
+{
+  public static void main(String args[])
+  {
+    PrintWriter pw = new PrintWriter(System.out,true);
+    pw.println("This is a Sample text");
+    int i = 30;
+    pw.println(i);
+    double d = 3734.342941;
+    pw.println(d);
+  }
+}
+
+READING AND WRITING TEXT FILW
+4. import java.io.*;
+class showfile
+{
+  public static void main(String args[]) throws IOException
+  {
+    int i;
+    FileInputStream fin;
+    try
+    {
+      fin = new FileInputStream (args[0]);
+    }
+    catch (FileNotFoundException fe)
+    {
+      System.out.println("Show file: No File");
+      return;
+    }
+    do
+    {
+      i = fin.read();
+      if (i != -1)
+      System.out.print((char)i);
+    }
+    while(i != -1);
+    fin.close();
+  }
+}
