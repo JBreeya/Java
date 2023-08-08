@@ -1,0 +1,67 @@
+STRING HANDLING
+1. class strdemo
+{
+  public static void main(String args[])
+  {
+    char s[] = {'j','o','e'};
+    String s1 = new String(s);
+    System.out.println(s1);
+  }
+}
+
+2. class substring //displays only part of a word
+{
+  public static void main(String args[])
+  {
+    char s[] = {'j','b','r','e','e','y','a'};
+    string s1 = new String (s, 1, 6);
+    System.out.println(s1);
+  }
+}
+
+STRING CONCATENATION
+3. class strcat
+{
+  public static void main(String args[])
+  {
+    string s1 = "Ju" + "Joseline";
+    System.out.println(s1);
+  }
+}
+
+STRING CONCATENATION WITH OTHER DATATYPES
+4. class strcat1
+{
+  public static void main(String args[])
+  {
+    int age = 21;
+    String s = "Joe is " +age+ " years old";
+    System.out.println(s);
+  }
+}
+
+toString()
+5. class box
+{
+  double length;
+  double breadth;
+  double height;
+  box(double len, double bre, double hei)
+  {
+    length = len;
+    breadth = bre;
+    height - hei;
+  }
+  public String toString()
+  {
+    return "Dimensions are " +length+ " by " +breadth+ " by " +height+ ".";
+  }
+}
+class tostringdemo
+{
+  box b = new box(15,20.25);
+  String s = "Box b: " +b;
+  System.out.println(b);
+  System.out.pritnln(s);
+  }
+}
