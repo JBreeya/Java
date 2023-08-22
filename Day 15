@@ -1,0 +1,92 @@
+COLLECTION
+- A collection is an object that groups multiple elements into single unit.
+- Collections are used to store, retreive and manipulate date and to transmit data from one method to another.
+
+ARRAY LIST CLASS
+
+Abstractlist
+      |
+ Arraylist
+
+1. import java.util.*;
+class arraylistdemo
+{
+  public static void main(String args[])
+  {
+    ArrayList obj = new ArrayList();
+    Systrm.out.println("Initial size of obj = " +obj.size());
+    obj.add("X");
+    obj.add("A");
+    obj.add("C");
+    obj.add("T");
+    obj.add("N");
+    obj.add("S");
+    obj.add(1,"B3");
+    System.out.println("Size of obj after adding = "+obj.size());
+    System.out.println("Contents of obj = "+obj); 
+    obj.remove("C");
+    obj.remove(2);
+    System.out.println("Size of obj after deletion = "+obj.size());
+    System.out.println("Contents of obj = "+obj);
+  }
+}
+
+AbstractSequencetialList
+          |
+      LinkedList -- List Interface
+
+2. import java.util.*;
+class LinkedListDemo
+{
+  public static void main(String args[])
+  {
+    LinkedList obj = new LinkedList();
+    obj.add("S");
+    obj.add("B");
+    obj.add("T");
+    obj.add("N");
+    obj.add("C");
+    obj.addLast("K");
+    obj.addFirst("W");
+    obj.add(2,"P");
+    System.out.println("Original Contents of obj = "+obj); 
+    obj.remove("B");
+    obj.remove(3);
+    System.out.println("Size of obj after deletion = "+obj.size());
+    obj.removeFirst();
+    obj.removeLast();
+    System.out.println("obj after deleting first and last value = "+obj);
+  }
+}
+
+AbstractSet
+    |
+ HashSet -- Set Interface
+
+3. import java.util.*;
+class hashsetdemo
+{
+  public static void main(String args[])
+  {
+    HashSet hs = newHashSet();
+    hs.add("S");
+    hs.add("K");
+    hs.add("A");
+    System.out.println(hs);
+  }
+}
+
+4. import.java.util.*;
+class treesetdemo
+{
+  public static void main(String args[])
+  {
+    TreeSet ts = new TreeSet();
+    ts.add("N");
+    ts.add("G");
+    ts.add("V");
+    ts.add("I");
+    ts.add("T");
+    System.out.println(ts);
+  }
+}
