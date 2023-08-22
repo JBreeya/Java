@@ -1,0 +1,59 @@
+APPLET
+An Applet is a dynamic and interactive program that can run inside a Java-enabled web browser.
+awt - Abstract window toolkit
+appleviewer
+
+1. import java.apllet.*;
+import java.awt.*;
+//<applet code = "firstapplet.java" height = 300 width = 300></applet>
+public class firstapplet extends Applet
+{
+  public void paint (Graphics g)
+  {
+    g.drawString("This is the First Applet",100,150);
+  }
+}
+
+DRAWING LINES
+2. import java.apllet.*;
+import java.awt.*;
+//<applet code = "Lines.java" height = 300 width = 300></applet>
+public class Lines extends Applet
+{
+  public void paint (Graphics g)
+  {
+    g.drawLine(30,100,130,100);
+    g.drawLine(130,100,40,200);
+    g.drawLine(40,180,190,250);
+  }
+}
+
+DRAWING RECTANGLES
+3. import java.apllet.*;
+import java.awt.*;
+//<applet code = "Rectangles.java" height = 300 width = 300></applet>
+public class Rectangles extends Applet
+{
+  public void paint (Graphics g)
+  {
+    g.drawRect(10,10,60,60);
+    g.fillRect(100,10,60,70);
+    g.drawRoundRect(190,10,60,50,15,15);
+    g.fillRoundRect(70,90,140,100,40,60);
+  }
+}
+
+POLYGON
+4. import java.apllet.*;
+import java.awt.*;
+//<applet code = "polygon.java" height = 300 width = 300></applet>
+public class polygon extends Applet
+{
+  public void paint (Graphics g)
+  {
+    int x Sides[] = {30,200,30,200,30};
+    int [] y Sides = {30,30,200,200,30};
+    int n = 5;
+    g.drawPolygon(xSides,ySides,n);
+  }
+}
