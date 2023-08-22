@@ -1,0 +1,44 @@
+DRAWING ELIPTICALS
+1. import java.apllet.*;
+import java.awt.*;
+//<applet code = "Oval.java" height = 300 width = 300></applet>
+public class Oval extends Applet
+{
+  public void paint (Graphics g)
+  {
+    g.drawOval(30,130,200,200);
+    g.fillOval(300,180,300,300);
+  }
+}
+
+COLOR FILLING
+2. import java.apllet.*;
+import java.awt.Color;
+import java.awt.*;
+//<applet code = "colordemo.java" height = 300 width = 300></applet>
+public class colordemo extends Applet
+{
+  public void paint (Graphics g)
+  {
+    g.setColor(Color.blue);
+    g.fillOval(30,80,200,100);
+    g.set Font(new Font("Arial", Font.ITALIC,22));
+    g.setColor(Color.yellow);
+    g.drawString("JAVA",100,100);
+  }
+}
+
+CLIIPER
+3. import java.apllet.*;
+import java.awt.*;
+//<applet code = "Clipper.java" height = 300 width = 300></applet>
+public class Clipper extends Applet
+{
+  public void paint (Graphics g)
+  {
+    g.clipRect(10,10,150,100);
+    g.setFont(new Font("Arial", Font.BOLD,20));
+    g.fillOval(100,60,80,80);
+    g.drawString("Joseline Breeya",10,100);
+  }
+}
