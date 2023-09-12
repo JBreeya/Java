@@ -1,0 +1,28 @@
+WORKING WITH CONTROLS
+
+1. import java.awt.*;
+import java.applet.*;
+//<applet code = "Labeldemo.java" height = 300 width = 300 > </applet>
+public class Labeldemo extends Applet
+{
+  public void init()
+  {
+    Label one = new Label("First");
+    Label two = new Label ("Second");
+    Label three = new Label ("Third");
+    odd(one);
+    odd(two);
+    odd(three);
+  }
+}
+
+EVENT HANDLING
+- java.awt.event.*;
+- EVENT ~ An event is an object that describes a change of state in a source, it can be generated as a consequences of a person interacting with the elements in a 
+Graphical user interface (GUI)
+- EVENT SOURCES ~ A source is an object that generates an event. This occurs when the interval state of that object changes in someway.
+- Public void addtypelistener (typelistener object)
+- EVENT LISTENERS ~ A listener is an object that is notified when an event occurs.
+        - It has two important requirements.
+            1. It must have been registered with one or more sources to receive notifications about specific type of events.
+            2. 
