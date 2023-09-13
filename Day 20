@@ -1,0 +1,71 @@
+COMBO BOXES
+Combination of Listbox and Textbox
+1. import java.awt.*;
+import javax.swing.*;
+//<apllet code = "JComboBoxDemo" height = 300 width = 300> </applet>
+public class JComboBoxDemo extends JApplet
+{
+  JLabel j1;
+  public void init()
+  {
+    Container ContantPane = getContentPane();
+    ContentPane.setLayout(new FlowLayout());
+    JComboBox jcb = new JComboBox();
+    jcb.addItem("Vanilla");
+    jcb.addItem("Pista");
+    jcb.addItem("Butterscotch");
+    jcb.addItem("Chocolate");
+    ContentPane.add(jcb);
+  }
+}
+
+J TABBED PANES
+2. import javax.swing.*;
+<applet code = "JTabbedPaneDemo" height = 300 width = 300> </applet>
+public class JTabbedPaneDemo extends JApplet
+{
+  public void init()
+  {
+    JTabbedPane jtp = new JTabbedPane();
+    jtp.addTab("Cities", new CitiesPanel());
+    jtp.addTab("Colors", new ColorsPanel());
+    jtp.addTab("Flowers", new FlowersPanel());
+    getContentPane().add(jtp);
+  }
+}
+class CitiesPanel extends JPanel
+{
+  public CitiesPanel()
+  {
+    JButton b1 = new JButton("London");
+    add(b1);
+    JButton b2 = new JButton("Tokyo");
+    add(b2);
+    JButton b3 = new JButton("Hongkong");
+    add(b3);
+  }
+}
+class ColorsPanel extends JPanel
+{
+  public ColorsPanel()
+  {
+    JCheckBox jcb1 = new JCheckBox("Blue");
+    add(jcb1);
+    JCheckBox jcb2 = new JCheckBox("Green");
+    add(jcb2);
+    JCheckBox jcb3 = new JCheckBox("Red");
+    add(jcb3);
+  }
+}
+class FlowersPanel extends JPanel
+{
+  public FlowersPanel()
+  {
+    JComboBox jcb = new JComboBox();
+    jcb.addItem("Tulips");
+    jcb.addItem("Sunflower");
+    jcb.addItem("Jasmine");
+    jcb.addItem("Lavender");
+    add(jcb);
+  }
+}
