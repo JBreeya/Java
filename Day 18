@@ -18,11 +18,65 @@ public class Labeldemo extends Applet
 
 EVENT HANDLING
 - java.awt.event.*;
-- EVENT ~ An event is an object that describes a change of state in a source, it can be generated as a consequences of a person interacting with the elements in a 
+- EVENT ~ An event is an object that describes a change of state in a source, It can be generated as a consequence of a person interacting with the elements in a 
 Graphical user interface (GUI)
-- EVENT SOURCES ~ A source is an object that generates an event. This occurs when the interval state of that object changes in someway.
+- EVENT SOURCES ~ A source is an object that generates an event. This occurs when the interval state of that object changes in some way.
 - Public void addtypelistener (typelistener object)
-- EVENT LISTENERS ~ A listener is an object that is notified when an event occurs.
-        - It has two important requirements.
-            1. It must have been registered with one or more sources to receive notifications about specific type of events.
-            2. 
+- EVENT LISTENERS ~ A listener is an object notified when an event occurs.
+        - It has two essential requirements.
+            1. It must have been registered with one or more sources to receive notifications about specific events.
+            2. It must implement methods to receive the process these notifications. eg: mouse listener
+
+EVENT LISTENER INTERFACE
+1. import java.awt.*;
+import java.awt.event.*;
+import java.applet.*
+class menu1 extends frame implements ActionListener
+{
+  Button b1,b2;
+  Frame f = new Frame ("Java");
+  menu1 (Straight)
+  {
+    super (t);
+    MenuBar mbar = newMenuBar();
+    Menu file = new Menu("file");
+    MenuItem it1, it2;
+    file.add(it1 = new MwnuItem ("OK"));
+    file.add(it2 = new MenuItem ("CANCEL"));
+    mbar.add(file);
+    setMenuBar(mbar);
+    it1.addActionListener(this);
+    it2.addActionListener(this);
+  }
+  public void actionPerformed(ActionEvent ae)
+  {
+    Dialog fd = new Dialog (f, "Dialog box");
+    String arg = (String) ae.getActionCommand();
+    if (arg.equals("OK"))
+    {
+      fd.add(new Button ("OK pressed"));
+      fd.setSize(200,100);
+      fd.setVisible(true);
+    }
+    if (arg.equals("CANCEL"))
+    {
+      fd.add(new Button ("CANCEL pressed"));
+      fd.setSize(200,100);
+      fd.setVisible(true);
+    }
+  }
+}
+public class menudemo extends Applet
+{
+  Frame f;
+  public void init()
+  {
+    f = new menu1 ("menuDialog");
+    f.setSize(200,100);
+    f.setVisible(true);
+  }
+  public void Start()
+  {
+    f.setVisible(true);
+  }
+//<applet code = "menudemo" height = 300 width = 300> </applet>
