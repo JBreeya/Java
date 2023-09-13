@@ -1,0 +1,147 @@
+OPEN DATABASE CONNECTIVITY (ODBC)
+DataBase - Collection of information stored in a sequencial manner in the form of rows and coloumns.
+SQL - Structured Query Language
+DSN - Data Source Name
+
+TO CREATE A TABLE
+1.import java.sql.*;
+import java.io.*;
+class create
+{
+	public static void main(String args[ ])
+	{
+	try
+	{
+		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+		Connection con=DriverManager.getConnection("jdbc:odbc:dbs","scott","tiger");
+		Statement stmt=con.createStatement();
+		stmt.close();
+		con.close();
+		System.out.println("Table successfully Created");
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	}
+}
+
+TO SELECT A TABLE
+2. import java.sql.*;
+import java.io.*;
+class selectdata
+{
+	public static void main(String args[ ])
+	{
+		ResultSet rs;
+	try
+	{
+		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+		Connection con=DriverManager.getConnection("jdbc:odbc:dbs","scott","tiger");
+		Statement  stmt=con.createStatement();
+		rs=stmt.executeQuery("select * from student2");
+		System.out.println("no"+"\t\tcompany"+"\tcredit");
+		while(rs.next())
+		{
+			System.out.println(rs.getInt("no")+"\t\t"+rs.getString("company")+"\t"+rs.getInt("credit"));
+		}
+		stmt.close();
+		con.close();
+		System.out.println("Records successfully selected");
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	}
+}
+
+TO INSERT A RECORD
+3. import java.sql.*;
+import java.io.*;
+class insertdata
+{
+	public static void main(String args[ ])
+	{
+	try
+	{
+		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+		Connection con=DriverManager.getConnection("jdbc:odbc:dbs","scott","tiger");
+		Statement  stmt=con.createStatement();
+		stmt.executeUpdate("insert into student2(no,company,credit) values (6, 'HCL',80000)");
+ 		ResultSet rs=stmt.executeQuery("select * from student2");
+		System.out.println("no"+"\t\tcompany"+"\tcredit");
+		while(rs.next())
+		{
+			System.out.println(rs.getInt("no")+rs.getString("company")+rs.getInt("credit"));
+		}
+		stmt.close();
+		con.close();
+		System.out.println("Record successfully inserted");
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	}
+}
+
+TO DELETE A RECORD
+4. import java.sql.*;
+import java.io.*;
+class deletedata
+{
+	public static void main(String args[ ])
+	{
+	try
+	{
+		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+		Connection con=DriverManager.getConnection("jdbc:odbc:dbs","scott","tiger");
+		Statement  stmt=con.createStatement();
+		stmt.executeUpdate("delete from student2 where credit=80000");
+ 		ResultSet rs=stmt.executeQuery("select * from student2");
+		System.out.println("no"+"\t\tcompany"+"\tcredit");
+		while(rs.next())
+		{
+			System.out.println(rs.getInt("no")+rs.getString("company")+rs.getInt("credit"));
+		}
+		stmt.close();
+		con.close();
+		System.out.println("Record successfully deleted");
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	}
+}
+
+TO UPDATE A RECORD
+5. import java.sql.*;
+import java.io.*;
+class updatedata
+{
+	public static void main(String args[ ])
+	{
+	try
+	{
+		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+		Connection con=DriverManager.getConnection("jdbc:odbc:dbs","scott","tiger");
+		Statement  stmt=con.createStatement();
+		stmt.executeUpdate("update student2  set credit = 100000 where company='wipro' ");
+ 		ResultSet rs=stmt.executeQuery("select * from student2");
+		System.out.println("no"+"\t\tcompany"+"\tcredit");
+		while(rs.next())
+		{
+			System.out.println(rs.getInt("no")+"\t\t"+rs.getString("company")+"\t"+rs.getInt("credit"));
+		}
+		stmt.close();
+		con.close();
+		System.out.println("Record successfully deleted");
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	}
+}
