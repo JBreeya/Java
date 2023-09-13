@@ -1,0 +1,67 @@
+JAVA SWING
+
+javax - extention
+Swing is a extention of Java
+
+1. import javax.swing.*;
+import java.awt.*;
+//<applet code = "JLabelDemo" width = 300 height = 300> </applet>
+public class JLabelDemo extends JApplet
+{
+  public void init()
+  {
+    Container ContentPane = getContentPane();
+    JLabel j1 = new JLabel ("Java from Sun MicroSystems", JLabel.CENTER);
+    ContentPane.add(j1);
+  }
+}
+
+TEXT FIELD
+2. import javax.swing.*;
+import java.awt.*;
+//<applet code = "JTextFieldDemo" width = 300 height = 300> </applet>
+public class JTextFieldDemo extends JApplet
+{
+  JTextFieldDemo jtf;
+  public void init()
+  {
+    Container ContentPane = getContentPane();
+    ContentPane.setLayout(new.FlowLayout());
+    JTextField jtf = new JTextField(15);
+    ContentPane.add(jtf);
+  }
+}
+
+RADIO BUTTONS
+3. import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+//<applet code = "JRadioButtonDemo" width = 300 height = 300> </applet>
+public class JRadioButtonDemo extends JApplet implement ActionListener
+{
+  JTextField jtf;
+  public void init()
+  {
+    Container ContentPane = getContentPane();
+    ContentPane.setLayout(new FlowLayout());
+    JRadioButton jrb1 = new JRadioButton("Male");
+    jrb1.addActionListener(this);
+    ContentPane.add(jrb1);
+    JRadioButton jrb2 = new JRadioButton("Female");
+    jrb1.addActionListener(this);
+    ContentPane.add(jrb2);
+    JRadioButton jrb3 = new JRadioButton("Transgender");
+    jrb1.addActionListener(this);
+    ContentPane.add(jrb3);
+    ButtonGroup bg = new ButtonGroup();
+    bg.add(jrb1);
+    bg.add(jrb2);
+    bg.add(jrb3);
+    jtf = new JTextField(12);
+    ContentPane.add(jtf);
+  }
+  public void actionPerformed (ActionEvent ae)
+  {
+    jtf.setText(ae.getActionCommand());
+  }
+}
